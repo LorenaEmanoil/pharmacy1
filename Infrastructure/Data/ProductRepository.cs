@@ -46,7 +46,7 @@ public class ProductRepository(StoreContext context) : IProductRepository
                 "priceDesc" => query.OrderByDescending(x => x.Price),
                 _=> query.OrderBy(x => x.Name)
             };
- 
+
 
         return await query.ToListAsync();
     }
