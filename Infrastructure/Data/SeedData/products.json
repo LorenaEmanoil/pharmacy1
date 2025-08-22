@@ -1,0 +1,166 @@
+
+ [
+  {
+    "Name": "Paracetamol 500mg",
+    "Description": "Analgezic și antipiretic, utilizat pentru dureri și febră.",
+    "Price": 12.5,
+    "PictureUrl": "/images/products/paracetamol.png",
+    "Type": "Tablete",
+    "Brand": "Terapia",
+    "QuantityInStock": 120
+  },
+  {
+    "Name": "Ibuprofen 400mg",
+    "Description": "Anti-inflamator nesteroidian, recomandat pentru dureri și inflamații.",
+    "Price": 18,
+    "PictureUrl": "/images/products/ibuprofen.png",
+    "Type": "Tablete",
+    "Brand": "Zentiva",
+    "QuantityInStock": 95
+  },
+  {
+    "Name": "Nurofen Forte",
+    "Description": "Calmează durerile puternice și reduce febra.",
+    "Price": 25,
+    "PictureUrl": "/images/products/nurofen.png",
+    "Type": "Capsule",
+    "Brand": "Reckitt",
+    "QuantityInStock": 80
+  },
+  {
+    "Name": "Aspirin Plus C",
+    "Description": "Conține acid acetilsalicilic și vitamina C pentru gripă și răceală.",
+    "Price": 22,
+    "PictureUrl": "/images/products/aspirin.png",
+    "Type": "Tablete efervescente",
+    "Brand": "Bayer",
+    "QuantityInStock": 60
+  },
+  {
+    "Name": "Magneziu + B6",
+    "Description": "Supliment alimentar pentru reducerea oboselii și crampele musculare.",
+    "Price": 30,
+    "PictureUrl": "/images/products/magneziu.png",
+    "Type": "Suplimente",
+    "Brand": "Walmark",
+    "QuantityInStock": 70
+  },
+  {
+    "Name": "Vitamina C 1000mg",
+    "Description": "Susține imunitatea și are efect antioxidant.",
+    "Price": 28,
+    "PictureUrl": "/images/products/vitamina-c.png",
+    "Type": "Vitamine",
+    "Brand": "Secom",
+    "QuantityInStock": 150
+  },
+  {
+    "Name": "Vitamina D3 2000UI",
+    "Description": "Supliment pentru sănătatea oaselor și imunității.",
+    "Price": 35,
+    "PictureUrl": "/images/products/vitamina-d.png",
+    "Type": "Vitamine",
+    "Brand": "Solgar",
+    "QuantityInStock": 110
+  },
+  {
+    "Name": "Calciu + Vitamina D",
+    "Description": "Ajută la menținerea sănătății sistemului osos.",
+    "Price": 40,
+    "PictureUrl": "/images/products/calciu.png",
+    "Type": "Suplimente",
+    "Brand": "Doppelherz",
+    "QuantityInStock": 85
+  },
+  {
+    "Name": "Rennie",
+    "Description": "Pentru arsuri la stomac și indigestie.",
+    "Price": 18,
+    "PictureUrl": "/images/products/rennie.png",
+    "Type": "Comprimate masticabile",
+    "Brand": "Bayer",
+    "QuantityInStock": 65
+  },
+  {
+    "Name": "Omeprazol 20mg",
+    "Description": "Reduce aciditatea gastrică, tratament pentru reflux gastro-esofagian.",
+    "Price": 22,
+    "PictureUrl": "/images/products/omeprazol.png",
+    "Type": "Capsule",
+    "Brand": "KRKA",
+    "QuantityInStock": 75
+  },
+  {
+    "Name": "Strepsils Miere și Lămâie",
+    "Description": "Pastile pentru calmarea durerilor în gât.",
+    "Price": 15,
+    "PictureUrl": "/images/products/strepsils.png",
+    "Type": "Pastile",
+    "Brand": "Reckitt",
+    "QuantityInStock": 140
+  },
+  {
+    "Name": "Septolete Mentă",
+    "Description": "Pastile antiseptice pentru gât iritat.",
+    "Price": 12,
+    "PictureUrl": "/images/products/septolete.png",
+    "Type": "Pastile",
+    "Brand": "KRKA",
+    "QuantityInStock": 90
+  },
+  {
+    "Name": "Panadol Extra",
+    "Description": "Calmează durerile de cap și reduce febra.",
+    "Price": 20,
+    "PictureUrl": "/images/products/panadol.png",
+    "Type": "Tablete",
+    "Brand": "GSK",
+    "QuantityInStock": 100
+  },
+  {
+    "Name": "Sinupret",
+    "Description": "Fitoterapic pentru sinuzită și căi respiratorii.",
+    "Price": 32,
+    "PictureUrl": "/images/products/sinupret.png",
+    "Type": "Picături",
+    "Brand": "Bionorica",
+    "QuantityInStock": 55
+  },
+  {
+    "Name": "Coldrex Max Grip",
+    "Description": "Plicuri pentru gripă și răceală, cu paracetamol și vitamina C.",
+    "Price": 27,
+    "PictureUrl": "/images/products/coldrex.png",
+    "Type": "Pulbere",
+    "Brand": "GSK",
+    "QuantityInStock": 85
+  },
+  {
+    "Name": "Fervex",
+    "Description": "Soluție instant pentru gripă și răceală.",
+    "Price": 24,
+    "PictureUrl": "/images/products/fervex.png",
+    "Type": "Pulbere",
+    "Brand": "Bristol",
+    "QuantityInStock": 95
+  },
+  {
+    "Name": "Prospan Sirop",
+    "Description": "Sirop pentru tuse pe bază de iederă.",
+    "Price": 30,
+    "PictureUrl": "/images/products/prospan.png",
+    "Type": "Sirop",
+    "Brand": "Engelhard",
+    "QuantityInStock": 50
+  },
+  {
+    "Name": "ACC 600",
+    "Description": "Mucolitic pentru tuse productivă.",
+    "Price": 26,
+    "PictureUrl": "/images/products/acc.png",
+    "Type": "Tablete efervescente",
+    "Brand": "Sandoz",
+    "QuantityInStock": 70
+  }
+]
+
