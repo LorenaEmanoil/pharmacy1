@@ -4,19 +4,11 @@ using Core.Entities;
 using Core.Interfaces;
 using StackExchange.Redis;
 
+namespace Infrastructure.Services;
 
-namespace Core.Infrastructure.Services;
-
-public class CartService : ICartService
+public class CartService(IConnectionMultiplexer redis) : ICartService
 {
-    private readonly IDatabase _database;
-
-    // Constructor
-    public CartService(IConnectionMultiplexer redis)
-    {
-        _database = redis.GetDatabase();
-    }
-
+    private readonly IDatabase _database = redis.GetDatabase();
     public async Task<bool> DeleteCartAsync(string key)
     {
         return await _database.KeyDeleteAsync(key);
@@ -24,7 +16,8 @@ public class CartService : ICartService
 
     public async Task<ShoppingCart?> GetCartAsync(string key)
     {
-        var data = await _database.StringGetAsync(key);
+         var data = await _database.StringGetAsync(key);
+
         return data.IsNullOrEmpty ? null : JsonSerializer.Deserialize<ShoppingCart>(data!);
     }
 

@@ -1,7 +1,7 @@
 using API.Middleware;
-using Core.Infrastructure.Services;
 using Core.Interfaces;
 using Infrastructure.Data;
+using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
 

@@ -32,8 +32,20 @@ public class BuggyController : BaseApiController
     }
     
     [HttpPost("validationerror")]
-    public IActionResult GetValidationError(CreateProductDto product)
+public IActionResult GetValidationError([FromBody] CreateProductDto product)
+{
+    try
     {
-        return Ok();
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        return Ok(product);
     }
+    catch (Exception ex)
+    {
+        return StatusCode(500, new { error = ex.Message, stack = ex.StackTrace });
+    }
+}
 }
