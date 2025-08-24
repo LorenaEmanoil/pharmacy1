@@ -1,6 +1,8 @@
 using System;
+using System.Security.Claims;
 using API.DTOs;
 using Core.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
@@ -30,22 +32,34 @@ public class BuggyController : BaseApiController
     {
         throw new Exception("This is a test exception");
     }
-    
-    [HttpPost("validationerror")]
-public IActionResult GetValidationError([FromBody] CreateProductDto product)
-{
-    try
-    {
-        if (!ModelState.IsValid)
-        {
-            return BadRequest(ModelState);
-        }
 
-        return Ok(product);
-    }
-    catch (Exception ex)
+    [HttpPost("validationerror")]
+    public IActionResult GetValidationError([FromBody] CreateProductDto product)
     {
-        return StatusCode(500, new { error = ex.Message, stack = ex.StackTrace });
+        try
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            return Ok(product);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { error = ex.Message, stack = ex.StackTrace });
+        }
     }
-}
+
+    [Authorize]
+    [HttpGet("secret")]
+    public IActionResult GetSecret() 
+    {
+        var name = User.FindFirst(ClaimTypes.Name)?.Value;
+        var id = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+        return Ok("Hello " + name + " with the id of " + id);
+    }
+
+
 }
