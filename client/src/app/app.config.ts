@@ -7,6 +7,7 @@ import { loadingInterceptor } from './core/interceptors/loading-interceptor';
 import { InitService } from './core/services/init.service';
 import { lastValueFrom } from 'rxjs';
 
+
 function initializeApp(InitService: InitService){
   return () => lastValueFrom(InitService.init()).finally(() => {
     const splash = document.getElementById('initial-splash');
@@ -21,7 +22,10 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideHttpClient(withInterceptors([errorInterceptor, loadingInterceptor])),
+    provideHttpClient(withInterceptors([
+      errorInterceptor, 
+      loadingInterceptor,
+    ])),
      provideAppInitializer(async () => {
       const initService = inject(InitService);
       return lastValueFrom(initService.init()).finally(() => {

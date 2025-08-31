@@ -1,3 +1,127 @@
-<div class="mt-5">
-    <h1 class="text-2xl">Only authorised users should get here!</h1>
-</div>
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formular Check‑out Farmacie</title>
+  <style>
+    :root{
+      --bg:#f7fdf7;          /* fundal deschis, sănătate */
+      --card:#ffffff;        /* card alb curat */
+      --muted:#5f6d5f;       /* text secundar */
+      --text:#1c2b1c;        /* text principal */
+      --primary:#2a9d8f;     /* verde farmacie */
+      --ring:#38b000;        /* accent focus */
+      --warn:#d62828;
+      --radius:12px;
+      --shadow: 0 4px 10px rgba(0,0,0,.05);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font:16px/1.5 system-ui, sans-serif;
+      color:var(--text); background:var(--bg);
+    }
+    .wrapper{max-width:900px; margin:40px auto; padding:0 20px}
+    .grid{display:grid; grid-template-columns:1fr; gap:20px}
+
+    .card{background:var(--card); border:1px solid #e0e8e0; border-radius:var(--radius); box-shadow:var(--shadow)}
+    .card h2{margin:0 0 12px; font-size:20px; color:var(--primary)}
+    .section{padding:20px}
+    .section + .section{border-top:1px solid #e0e8e0}
+
+    .field{display:flex; flex-direction:column; gap:6px}
+    .row{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    @media (max-width:720px){ .row{grid-template-columns:1fr} }
+
+    label{font-size:13px; color:var(--muted)}
+    input, select{width:100%; padding:10px 12px; border-radius:8px; background:#fff; border:1px solid #cfd8cf; color:var(--text); outline:none; font-size:15px}
+    input:focus, select:focus{border-color:var(--ring); box-shadow:0 0 0 3px rgba(56,176,0,.2)}
+    .error{font-size:12px; color:var(--warn); display:none}
+
+    .actions{display:flex; gap:12px; align-items:center; margin-top:18px}
+    .btn{appearance:none; border:0; padding:12px 16px; background:var(--primary); color:white; border-radius:8px; font-weight:600; cursor:pointer; box-shadow:var(--shadow)}
+    .btn:disabled{opacity:.6; cursor:not-allowed}
+    .ghost{background:none; border:1px solid #b5c5b5; color:var(--primary)}
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1 style="margin:0 0 20px; font-size:26px; color:var(--primary); text-align:center">Finalizare comandă</h1>
+
+    <form id="checkout" class="grid" novalidate>
+      <div class="card">
+        <div class="section">
+          <h2>Date de contact</h2>
+          <div class="row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+              <div class="error" data-error-for="email">Email invalid.</div>
+            </div>
+            <div class="field">
+              <label for="telefon">Telefon</label>
+              <input id="telefon" name="telefon" type="tel" pattern="^[0-9 +()-]{8,}$" required />
+              <div class="error" data-error-for="telefon">Număr invalid.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Adresă de livrare</h2>
+          <div class="row">
+            <div class="field">
+              <label for="nume">Nume</label>
+              <input id="nume" name="nume" required />
+            </div>
+            <div class="field">
+              <label for="prenume">Prenume</label>
+              <input id="prenume" name="prenume" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="adresa">Adresă</label>
+            <input id="adresa" name="adresa" required />
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Plată</h2>
+          <div class="field">
+            <label for="metoda">Metodă de plată</label>
+            <select id="metoda" name="metoda" required>
+              <option value="">Alege...</option>
+              <option>Card</option>
+              <option>Ramburs</option>
+            </select>
+          </div>
+          <div class="actions">
+            <button class="btn" type="submit">Plasează comanda</button>
+            <button type="reset" class="btn ghost">Anulează</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('checkout');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      let ok = true;
+      form.querySelectorAll('input,select').forEach(el => {
+        const err = document.querySelector(`.error[data-error-for="${el.id}"]`);
+        if(!el.checkValidity()){
+          ok = false;
+          if(err) err.style.display = 'block';
+        } else {
+          if(err) err.style.display = 'none';
+        }
+      });
+      if(ok){
+        alert('Comanda a fost trimisă cu succes!');
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>
